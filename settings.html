@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darts Scorer - Setup</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <script defer src="settings_script.js"></script>
+</head>
+<body>
+    <hr class="titlehr0">
+    <h1 id="focim">DARTS SCORER</h1>
+    <hr class="titlehr">
+
+    <div class="form-container">
+        <h1 class="header">Darts Game Setup</h1>
+
+        <!-- Player Names -->
+        <div id="players">
+        <section style="flex-grow: 3"><div class="form-group">
+            <label for="player1">Player 1 Name:</label>
+            <input type="text" id="player1" required>
+        </div>
+        <div class="form-group">
+            <label for="player2">Player 2 Name:</label>
+            <input type="text" id="player2" required>
+        </div></section>
+        <button id="csere">⇅</button></div>
+
+        <!-- Set and Leg Options -->
+        <div class="form-group">
+            <label for="sets">Number of Sets (First to):</label>
+            <select id="sets">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="legs">Number of Legs (First to):</label>
+            <select id="legs">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+
+        <!-- In and Out Options -->
+        <div class="form-group">
+            <button class="option-btn selected" id="single-in">Single-In</button>
+            <button class="option-btn" id="double-in">Double-In</button>
+        </div>
+        <div class="form-group">
+            <button class="option-btn" id="single-out">Single-Out</button>
+            <button class="option-btn selected" id="double-out">Double-Out</button>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+            <button id="start-btn">Start Game</button>
+        </div>
+    </div>
+</body>
+</html>

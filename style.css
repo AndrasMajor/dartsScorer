@@ -1,0 +1,588 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #0A1117;
+    font-family: "Unbounded", serif;
+    font-weight: 0;
+}
+
+#focim {
+    font-size: 45px;
+    text-align: center;
+    color: white;
+    background-color: #0A1117;
+    font-family: "Unbounded", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+    
+
+}
+
+hr.titlehr0 {
+    width: 50%;
+    background-image: linear-gradient(#0A1117,#5c9c8c);
+    height: 10px;
+    border: 0;
+}
+
+hr.titlehr {
+    margin-left:50vw;
+    width: 50%;
+    background-image: linear-gradient(#5c9c8c, #0A1117);
+    
+    height: 10px;
+    border: 0;
+}
+
+
+
+.header {
+    width: 100%;
+    margin-top: 5%;
+    color: white;
+  
+    text-align: center;
+    font-size: 1.5rem;
+   
+}
+
+.game-mode-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 5% 10% 4% 10%;
+
+
+}
+
+.game-mode-container div {
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0D1B2A;
+    background: linear-gradient(145deg, #5BE7A9, #334f74);
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(91, 231, 169, 0.4);
+    position: relative;
+    overflow: hidden;
+    
+    
+}
+
+
+
+.game-mode:hover {
+    transform: scale(1.05);
+    background: linear-gradient(145deg, #64F0B2, #4A7BA0);
+    color: #E0FBFC;
+}
+
+
+#buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Unbounded", serif;
+
+}
+
+.button {
+    height: 8vh;
+    width: 40vw;
+    margin-bottom: 2%;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #0A1117;
+    color: white;
+    transition: 0.2s;
+    border: 3px solid #5BE7A9;
+    box-shadow:  0 5px 15px rgba(160, 252, 255, 0.3);
+}
+
+.button:hover{
+    width: 41vw;
+    height: 9vh;
+    
+}
+
+/* SETTINGS ---------------------------------------*/ 
+
+.form-container {
+    margin: auto;
+    margin-top: 3%;
+    background-color: #0A1117;
+    color:#5C9C8C;
+    box-shadow: 0 0 25px rgba(91, 231, 169, 0.4);
+    padding: 2rem;
+    border-radius: 12px;
+   
+    width: 65vw;
+    height: auto;
+   }
+
+   .form-group {
+    margin: 1rem 0 1rem 0;}
+
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+
+
+
+    .option-btn {
+        background-color: #7A898B;
+        margin: 0.2rem 0;
+        font-size: 1.1rem;
+        font-weight: bold;
+        transition: background-color 0.1s;
+        width: 49%;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 4px;
+        border: none;
+        color: white;
+    }
+    
+    .option-btn.selected {
+        background-color: #334F74;
+        color: white;
+    }
+    
+    .option-btn:hover {
+        background-color: #7891b1;
+    }
+
+    input[type="text"],
+select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+input[type="text"]{
+    width: 95%;
+    
+}
+
+div#players{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#csere{
+    margin-top:1rem;
+    height: 5vh;
+    width: 1%;
+    flex-grow: 1;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(140deg, #5BE7A9, #334f74);
+      
+}
+#csere:hover{
+    color: white;
+}
+
+
+#start-btn {
+    width: 99%;
+    height: 50px;
+    padding: 0.3rem;
+    background: linear-gradient(140deg, #5BE7A9, #334f74);
+    
+    font-weight: bolder;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#start-btn:hover {
+    transition: 0.5s;
+    color: white;
+    box-shadow: 2px 2px 15px rgba(91, 231, 169, 0.4);
+}
+
+
+/*game----------------------------------------*/
+
+section#game_page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(#0A1117,#5BE7A9, #0A1117);
+    
+
+}
+
+.name1, .name2 {
+    font-size: 0.8em;
+}
+
+hr.line{
+    width:70%;
+    margin-top: 2%;
+
+}
+
+/* Fő konténer */
+.players {
+    width: 96%;
+    display: flex;
+    gap: 2vw;
+    background-color: #0A1117;
+    padding: 5vw 7vw;
+    border-radius: 10px;
+    font-size: 1em;
+    color: white;
+}
+
+/* Játékos kártyák */
+.player_1, .player_2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:0.2vh;
+    padding: 2vw;
+    background-color: #0A1117;
+    border-radius: 10px;
+    width: 40vw;
+    box-shadow: 0 0 15px rgba(91, 231, 169, 0.4);
+    
+}
+
+/*score board*/
+.game_state{
+    margin-top: 5vw;
+    width: 20vw;
+    height:18vw;
+    font-size: 0.7em;
+    background-color:#0A1117;
+    box-shadow: 0 0 15px rgba(91, 231, 169, 0.4);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sets, .legs{
+    display: flex;
+    flex-direction: column;
+    padding: 1vw;
+    margin: 1%;
+    justify-content: center;
+    align-items: center;
+    }
+
+.set_container, .leg_container{
+    display: flex;
+    flex-direction: row;
+    gap: 7vw;
+    color:#3b5e8a
+   
+}
+
+/* Pontszám */
+.remaning_score1, .remaning_score2 {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #5BE7A9;
+    margin-top: 1vw;
+}
+
+/* Input mezők */
+input[type="number"] {
+    width: 8vw;
+    padding: 0.5vw;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+    margin: 1vh 0 1vh 0;
+}
+
+/* Undo gomb */
+input[type="button"] {
+    background-color: #FA4B4E;
+    color: white;
+    border: none;
+    padding: 0.7vw 1.6vw;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: 0.3s;
+    font-weight: bold;
+    margin-bottom: 2vw;
+}
+
+input[type="button"]:hover {
+    background-color: #b92828;
+}
+
+/*Average, last score*/
+
+.average, .legaverage, .last_score{
+   font-size: 0.7em;
+   margin-top: 0.5vw;
+}
+
+.average1, .average2, .last_score1, .last_score2, .legaverage1, .legaverage2{
+    font-size: 0.9em;
+    color: #3b5e8a;
+}
+
+
+
+/*checkout*/
+.checkout1, .checkout2{
+    font-size: 0.8em;
+}
+
+
+/*popup*/
+.modal {
+    display: none; 
+    position: absolute; 
+    z-index: 99999; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+  
+}
+
+/* A modális tartalma */
+#stats_container{
+    display: flex;
+    background-color: white;
+    margin: 15% auto;
+    padding: 1vw;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 0.7em;
+    justify-content: center;
+    align-items: center ;
+    flex-direction: column;
+}
+
+/* Bezáró gomb */
+.close {
+    color: #b92828 ;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 1vw;
+    margin-top: 1% ;
+}
+
+table{
+    border: 3px solid black;
+    border-collapse: collapse;
+    width: auto;
+}
+
+td, th{
+    border: 1px solid black;
+    padding: 1vw;
+}
+
+#stats_h{
+    color:black;
+    padding-bottom: 3%;
+}
+
+
+
+/*TABLEEET -------------------------------------*/
+
+@media all and (min-width: 600px) {
+
+    .game-mode-container div {
+        width: 25vh;
+        height: 25vh;
+        font-size: 1.8rem;
+        
+    
+    }
+
+    .game-mode-container {
+        margin: 5% 5% 5% 5%;
+    
+    }
+
+    #focim {
+        font-size: 50px;}
+
+    .header{
+        margin-top:2%;
+    }
+    
+    .button {
+        height: 10vh;
+        width: 30vw;}
+    
+    .button:hover{
+            width: 31vw;
+            height: 11vh;
+            
+        }
+
+    /*settings*/
+    .form-container {
+        width: 50vw;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    /*game*/
+    .remaning_score1, .remaning_score2 {
+    font-size: 3em;}
+
+    .average, .legaverage, .last_score{
+        font-size: 1.1em;
+       
+     }
+     
+     .average1, .average2, .last_score1, .last_score2, .legaverage1, .legaverage2{
+         font-size: 1.8em;
+         
+     }
+     
+     
+     .checkout1, .checkout2{
+         font-size: 1.3em;
+     }
+
+     .game_state{
+        font-size: 1.7rem;
+     }
+
+     input[type="number"] {
+        width: 5vw;
+    }
+
+    .name1, .name2 {
+        font-size: 1.6em;
+    }
+
+    .players {
+        width: auto ;
+    }
+
+    .player_1, .player_2{
+        width:22vw;
+    }
+
+    /* stats-------------*/
+    #stats_container{
+        width: 70%;
+    }
+
+
+}
+
+/*SZÁMÍTÓGÉÉP ------------------------------------*/
+@media all and (min-width: 1024px) {
+
+    .game-mode-container div {
+        width: 30vh;
+        height: 30vh;
+        font-size: 1.8rem;
+    
+    }
+
+    .game-mode-container {
+        margin: 2% 20% 4% 20%;
+    
+    }
+
+    #focim {
+        font-size: 55px;}
+
+    .header{
+        margin-top:2%;
+    }
+    
+    .button {
+        height: 10vh;
+        width: 15vw;}
+    
+    .button:hover{
+            width: 16vw;
+            height: 11vh;
+            
+        }
+
+    /*settings*/
+    .form-container {
+        width: 35vw;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    /*game*/
+
+    .average, .legaverage, .last_score{
+        font-size: 1.4em;
+       
+     }
+     
+     .average1, .average2, .last_score1, .last_score2, .legaverage1, .legaverage2{
+         font-size: 1.8em;
+         
+     }
+     
+
+     .game_state{
+        font-size: 2rem;
+     }
+
+     /*stats*/
+
+     #stats_container{
+        width: 60%;
+        font-size: 1em;
+    }
+
+    table{
+        width:50vw;
+    }
+
+    tr{
+        height: 5vh;
+    }
+        
+
+     
+}
+
